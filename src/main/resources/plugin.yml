@@ -1,0 +1,8 @@
+name: iTz_Kits
+version: 1.0
+main: me.itz.kits.Main
+commands:
+  kits:
+    aliases:
+      - kit
+  darkit:

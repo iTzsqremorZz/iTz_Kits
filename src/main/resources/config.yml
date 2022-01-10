@@ -1,0 +1,131 @@
+Database:
+  #Tipo de banco de dados: SQLITE & MYSQL
+  Type: SQLITE
+  Host: "localhost:3306"
+  User: "root"
+  Password: "root"
+  database: "kits"
+
+Categorias:
+  basicos:
+    titulo: "Kits - Básicos"
+    slot: 12
+    linhas: 4
+    voltar:
+      item: "ARROW"
+      slot: 29
+      nome: "§aVoltar"
+    nome: "§akits básicos"
+    #Caso queira colocar um item, use MATERIAL:DATA, caso contrario coloque a texture da cabeça
+    icone: "NmQyZTMxMDg3OWE2NDUwYWY1NjI1YmNkNDUwOTNkZDdlNWQ4ZjgyN2NjYmZlYWM2OWM4MTUzNzc2ODQwNmIifX19"
+    lore:
+      - "&7Clique para visualizar os"
+      - "&7Kits básicos do servidor"
+  vips:
+    titulo: "Kits - VIPs"
+    slot: 14
+    linhas: 4
+    voltar:
+      item: "ARROW"
+      slot: 29
+      nome: "§aVoltar"
+    nome: "§akits VIPs"
+    #Caso queira colocar um item, use MATERIAL:DATA, caso contrario coloque a texture da cabeça
+    icone: "diamond_sword:0"
+    lore:
+      - "&7Clique para visualizar os"
+      - "&7Kits vips do servidor"
+Kits:
+  membro_diario: #Caso queira mais kits, use este como base.
+    categoria: "basicos"
+    nome: "&aMembro diário"
+    #Coloque "nulo" para o kit ficar sem permissão
+    perm: "nulo" #caso não queira que o kit tenha permissão coloque "nulo".
+    sem_permissao: "&cVocê precisa do cargo &7Membro &cou superior para isso"
+    slot: 11
+    #Caso queira colocar um item, use MATERIAL:DATA, caso contrario coloque a texture da cabeça
+    icone: ""
+    lore:
+      - ""
+      - " &eOpções disponíveis:"
+      - "  &8| &fBotão esquerdo: &7receber kit"
+      - "  &8| &fBotão direito: &7visualizar kit"
+    #formato TIPO:TEMPO | Disponíveis: MINUTOS,HORAS,DIAS
+    espera: "DIAS:1"
+    #Menu de visualização do kit
+    visualizar_linhas: 5
+    visualizar_voltar: 39
+    visualizar_receber: 41
+    visualizar_proximo: 19
+    visualizar_anterior: 27
+    visualizar_slots: [ 10,11,12,13,14,15,16,19,20,21,22,23,24,25 ]
+    #Formato: MATERIAL:DATA:QUANTIDADE < item sem encantamento
+    #Formato: MATERIAL:DATA:QUANTIDADE:ENCANMENTO:LVL < item com encantamento
+    #Encamentos: https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/enchantments/Enchantment.html copie e cole somente o FIELD
+    items:
+      - "STONE_SWORD:0:1"
+      - "STONE_PICKAXE:0:1:DIG_SPEED:4"
+      - "STONE_HOE:0:1"
+      - "GOLDEN_APPLE:0:2"
+      - "COOKED_BEEF:0:8"
+      - "CHAINMAIL_HELMET:0:1"
+      - "CHAINMAIL_CHESTPLATE:0:1"
+      - "CHAINMAIL_LEGGINGS:0:1"
+      - "CHAINMAIL_BOOTS:0:1"
+    comandos:
+      - "nulo" #Coloque nulo caso não queira executar comando quando jogador pegar o kit, a variavel %jogador% retorna o nick dele
+  vip_diario:
+    categoria: "vips"
+    nome: "&6Vip diário"
+    #Coloque "nulo" para o kit ficar sem permissão
+    perm: "redesky.vip"
+    sem_permissao: "&cVocê precisa do cargo &6Vip &cou superior para isso"
+    slot: 11
+    #Caso queira colocar um item, use MATERIAL:DATA, caso contrario coloque a texture da cabeça
+    icone: "DIAMOND_SWORD:0"
+    lore:
+      - ""
+      - " &eOpções disponíveis:"
+      - "  &8| &fBotão esquerdo: &7receber kit"
+      - "  &8| &fBotão direito: &7visualizar kit"
+    #formato TIPO:TEMPO | Disponíveis: MINUTOS,HORAS,DIAS
+    espera: "MINUTOS:10"
+    #Menu de visualização do kit
+    visualizar_linhas: 5
+    visualizar_voltar: 39
+    visualizar_receber: 41
+    visualizar_proximo: 19
+    visualizar_anterior: 27
+    visualizar_slots: [ 10,11,12,13,14,15,16,19,20,21,22,23,24,25 ]
+    items:
+      - "DIAMOND_SWORD:0:1:PROTECTION_ENVIRONMENTAL:1:DURABILITY:1"
+      - "DIAMOND_SWORD:0:1:PROTECTION_ENVIRONMENTAL:1:DURABILITY:1"
+      - "DIAMOND_SWORD:0:1:PROTECTION_ENVIRONMENTAL:1:DURABILITY:1"
+      - "DIAMOND_SWORD:0:1:PROTECTION_ENVIRONMENTAL:1:DURABILITY:1"
+    comandos:
+      - "give %jogador% stone 1"
+Menus:
+  #Configurações do menu principal dos kits
+  Categoria:
+    titulo: "Categorias de kits"
+    linhas: 3
+  Visualizar:
+    titulo: "Kit - %kit% (Conteúdo)"
+    itens:
+      receber:
+        nome: "&aReceber kit"
+        item: "ZDVjNmRjMmJiZjUxYzM2Y2ZjNzcxNDU4NWE2YTU2ODNlZjJiMTRkNDdkOGZmNzE0NjU0YTg5M2Y1ZGE2MjIifX19"
+        lore:
+          - "§7Clique para receber este kit"
+      receber_recebeu:
+        nome: "§cReceber kit"
+        item: "OGNlM2IxZjI2ZjY1MjVhZjgyZjViYTE0ZGJiOTNiNWU3YTU0M2Q0NzdmYThkYTEyM2RiZmFhNmQyMjlmZGE0ZiJ9fX0="
+        lore:
+          - "§7Você já recebeu este kit,"
+          - "§7aguarde para recebê-lo novamente"
+          - ""
+          - " §fTempo restante: §7%tempo%"
+mensagens:
+  espaço-insuficiente: "§cVocê não tem espaço suficiente para coletar o kit"
+  kit-entregue: "§aYeah! o kit '%kit%' §afoi entregue com sucesso."
+  tentou-pegar-kit: "§cCalma ai! Aguarde mais %tempo% para receber este kit novamente"
