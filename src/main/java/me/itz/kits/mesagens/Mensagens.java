@@ -14,5 +14,6 @@ public class Mensagens {
         espaço_insuficiente = config.getString("mensagens.espaço-insuficiente").replace('&','§');
         kit_entregue = config.getString("mensagens.kit-entregue").replace('&','§');
         tentou_pegar_kit = config.getString("mensagens.tentou-pegar-kit").replace('&','§');
+        //teste
     }
 }
