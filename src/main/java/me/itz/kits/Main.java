@@ -23,6 +23,7 @@ public final class Main extends JavaPlugin {
     public static String prefix = "§b[iTz_Kits] §f";
     public static String prefixError = "§c[iTz_Kits] §f";
     public DatabaseConnection connection = null;
+    public String teste;
 
     @Override
     public void onEnable() {
